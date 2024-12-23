@@ -41,7 +41,7 @@ To run this project, you'll need:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/techtalker.git
+   git clone https://github.com/yaseminvatan/techtalker.git
    cd techtalker
    ```
 
@@ -127,7 +127,7 @@ tech_talker/
 
 ## Deployed Application
 
-The application is deployed at: [Deployed Link](https://your-app-link.render.com)
+The application is deployed at: [Deployed Link](https://techtalker.onrender.com)
 
 ## License
 
