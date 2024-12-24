@@ -18,7 +18,7 @@ document.querySelector('#create-post-form').addEventListener('submit', async (ev
       }
     }
   });
-  
+
   document.querySelectorAll('.edit-post').forEach((button) => {
     button.addEventListener('click', async () => {
       const id = button.getAttribute('data-id');
@@ -37,6 +37,23 @@ document.querySelector('#create-post-form').addEventListener('submit', async (ev
         } else {
           alert('Failed to update post.');
         }
+      }
+    });
+  });
+
+  document.querySelectorAll('.delete-post').forEach((button) => {
+    button.addEventListener('click', async () => {
+      const id = button.getAttribute('data-id');
+  
+      const response = await fetch(`/api/posts/${id}`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+      });
+  
+      if (response.ok) {
+        document.location.replace('/dashboard');
+      } else {
+        alert('Failed to delete post.');
       }
     });
   });
