@@ -37,5 +37,13 @@ router.get('/post/:id', async (req, res) => {
       res.status(500).json(err);
     }
   });
+  // Render the login page
+router.get('/login', (req, res) => {
+  if (req.session && req.session.logged_in) {
+    res.redirect('/dashboard');
+    return;
+  }
+  res.render('login'); 
+});
   
   module.exports = router;
