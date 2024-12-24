@@ -1,4 +1,7 @@
-document.querySelector('#logout').addEventListener('click', async () => {
+document.addEventListener('DOMContentLoaded', () => {
+  const logoutButton = document.querySelector('#logout');
+  if (logoutButton) {
+    logoutButton.addEventListener('click', async () => {
     const response = await fetch('/api/users/logout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -10,4 +13,5 @@ document.querySelector('#logout').addEventListener('click', async () => {
       alert('Failed to log out.');
     }
   });
-  
+}
+});

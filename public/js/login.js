@@ -1,5 +1,8 @@
-document.querySelector('#login-form').addEventListener('submit', async (event) => {
-    event.preventDefault();
+document.addEventListener('DOMContentLoaded', () => {
+  const loginForm = document.querySelector('#login-form');
+  if (loginForm) {
+    loginForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
   
     const username = document.querySelector('#username').value.trim();
     const password = document.querySelector('#password').value.trim();
@@ -18,10 +21,13 @@ document.querySelector('#login-form').addEventListener('submit', async (event) =
       }
     }
   });
-
-  document.querySelector('#signup-form').addEventListener('submit', async (event) => {
-    event.preventDefault();
-  
+}
+});
+document.addEventListener('DOMContentLoaded', () => {
+  const signupForm = document.querySelector('#signup-form');
+  if (signupForm) {
+    signupForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
     const username = document.querySelector('#signup-username').value.trim();
     const password = document.querySelector('#signup-password').value.trim();
   
@@ -39,3 +45,5 @@ document.querySelector('#login-form').addEventListener('submit', async (event) =
       }
     }
   });
+}
+});

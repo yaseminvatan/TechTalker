@@ -1,5 +1,8 @@
-document.querySelector('#create-post-form').addEventListener('submit', async (event) => {
-    event.preventDefault();
+document.addEventListener('DOMContentLoaded', () => {
+  const createPostForm = document.querySelector('#create-post-form');
+  if (createPostForm) {
+    createPostForm.addEventListener('submit', async (event) => {
+       event.preventDefault();
   
     const title = document.querySelector('#post-title').value.trim();
     const content = document.querySelector('#post-content').value.trim();
@@ -18,6 +21,8 @@ document.querySelector('#create-post-form').addEventListener('submit', async (ev
       }
     }
   });
+}
+});
 
   document.querySelectorAll('.edit-post').forEach((button) => {
     button.addEventListener('click', async () => {
